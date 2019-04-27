@@ -1,19 +1,20 @@
-# Project-3
-Project 3 - Codename Commodity
-# (TBD - TimeVenmo)
-![logo](https://github.com/rodolfosotojr/la-z-Ltrs/blob/master/readme-logo.jpeg?raw=true)      *..xxxxxxxxx*
+# ThisforThat
+![logo](https://github.com/ShelbyMarks/thisforthatlogo/blob/master/logo-2-min.jpg)      *..xxxxxxxxx*
+
+
 
 ## What our app does
-An app where you can digitally send / guarantee your time. Like Venmo, but with your time as a commodity.
+A fun timekeeping app enabling users to digitally send / guarantee their time. Users can trade their time as a commodity.
 
 [Link to Utility & 'How-To' Presentation](https://docs.google.com/presentation/d/1o_VDDoJ8jWpPQrMAwoa6rGI41QEea-3RvRwEq95IO50/edit#slide=id.g54825dc2e7_0_301).
 
 ## Why our app is useful
 
-As a user, I want to add formality to the colloquialism “buy me a beer and I’ll teach you..” (turn this into a Paragraph)
+As a user, I want to add formality to the colloquialism “buy me a beer and I’ll teach you..” 
 
-As  xxxx said:
- *"xxxxxxxx"*
+As a user, I want to repay my friends’ favors with my time in whatever effort makes sense (PG-13 rated)
+
+As a user, I’m looking gain some supplemental income/goods/educational value by moonlighting my skills
 
 
 ### Technologies/Frameworks used: (NEEDS TO BE EDITED)
