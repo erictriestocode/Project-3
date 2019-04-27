@@ -1,0 +1,27 @@
+{
+  "name": "thisforthat",
+  "version": "1.0.0",
+  "description": "Time is your commodity",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erictriestocode/Project-3.git"
+  },
+  "keywords": [
+    "time"
+  ],
+  "author": "Team Thisforthat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erictriestocode/Project-3/issues"
+  },
+  "homepage": "https://github.com/erictriestocode/Project-3#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "passport-local": "^1.0.0"
+  }
+}
