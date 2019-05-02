@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/erictriestocode/Project-3#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "express": "^4.16.4",
     "passport-local": "^1.0.0",
     "react-router-dom": "^5.0.0",
