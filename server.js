@@ -1,10 +1,10 @@
 const express = require("express");
-const routes = require("./routes");
+// const routes = require("./routes");
 const path = require("path");
-var Sequelize = require("sequelize");
+// var Sequelize = require("sequelize");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const passport = require("./config/passport");
+// const passport = require("./config/passport");
 
 
 // Define middleware here
@@ -12,12 +12,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //passport middleware
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true}));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true}));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Passport config
-require("./config/passport")(passport);
+// require("./config/passport")(passport);
 
 // Routes
 require("./routes/apiRoutes")(app);
@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
 
 // Start the API server
 app.listen(PORT, function() {
