@@ -1,0 +1,33 @@
+body {
+    background-image: url('../../assets/background.png');
+}
+
+.orange-text {
+    color: #ff9800 !important;
+    font-family: lobster;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    background: white;
+    opacity: .9;
+    width: 90%;
+}
+
+.icon-block {
+    padding: 0 15px;
+    background: white;
+    opacity: .9;
+}
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.responsive {
+    width: 25%;
+    height: auto;
+}
