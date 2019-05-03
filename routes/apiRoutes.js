@@ -1,34 +1,46 @@
-const db = require("../models");
-const passport = require("../config/passport");
-const isAuthenticated = require("../config/middleware/isAuthenticated");
-
+// Requiring our models and passport as we've configured it
+var db = require("../models");
+var passport = require("../config/passport");
+//
 module.exports = function (app) {
-
-  //These Routes handle user sign in/log ins
-  // Route to handle login attempts. Using passport's local authentication strategy
-  // user will be served content based on wether the authentication was successful or not
-  app.post("/user/login", passport.authenticate("local"));
-
-  //route for handling new user account creation requests. It will use the requirements and methods 
-  //given in the user.js model to attempt to insert a new user record into the Users table of the database
-  //if the user account is succesfully created, then the user will automatically be loged in via the 'user/login/' route
-  app.post("/new-user/signup", function (req, res) {
+  // Using the passport.authenticate middleware with our local strategy.
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+    res.json("/members");
+  });
+  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+  app.post("/api/signup", function (req, res) {
+    console.log(req.body);
     db.User.create({
       email: req.body.email,
-      password: req.body.password,
-      name: req.body.name
-    })
-      //after succesfully creating the row for the new user, they will be redierected through the user/login route with their credentials
-      .then(function () {
-        res.redirect(307, "/user/login")
-      }).catch(function (error) {
-        res.json(error);
-      })
-  })
-
+      password: req.body.password
+    }).then(function () {
+      res.redirect(307, "/api/login");
+    }).catch(function (err) {
+      console.log(err);
+      res.json(err);
+      // res.status(422).json(err.errors[0].message);
+    });
+  });
+  //
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
+  });
+  //
+  // Route for getting some data about our user to be used client side
+  app.get("/api/user_data", function (req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
   });
 };
