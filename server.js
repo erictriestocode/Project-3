@@ -3,27 +3,49 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const http = require("http"); // For initial testing!
-// const passport = require("./config/passport"); ***** BEC TODO
+
+
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const passport = require("./config/passport"); // ***** BEC TODO
+const db = require("./models");
+
 // var Sequelize = require("sequelize"); ***** SANTIAGO TODO
 // const routes = require("./routes"); ***** ERIC TODO
 
+//MIDDLEWARE--------------------------------------------------
+// Define middleware here
+// app.use(express.urlencoded({
+//   extended: true
+// }));
+// app.use(express.json());
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+app.use(bodyParser.json());
+app.use(express.static("public"));
+
 
 //passport middleware ***** BEC TODO
-// app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true}));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({
+  secret: "keyboard cat",
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+//-----------------------------------------------------------------
 
 // Passport config ***** BEC TODO
 // require("./config/passport")(passport);
 
 // Routes ***** ERIC TODO
-// require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
-app.get("*", (req,res) => {
+// Requiring our routes
+// require("./routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
@@ -35,6 +57,8 @@ if (process.env.NODE_ENV === "production") {
 // app.use(routes);
 
 // Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+db.sequelize.sync().then(function () {
+  app.listen(PORT, function () {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  });
 });
