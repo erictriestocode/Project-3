@@ -1,9 +1,7 @@
 import React from 'react';
-import React, { Component } from 'react'
 import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/NavBar";
-import Navbar from "./components/SigninForm";
 import SigninForm from './components/SigninForm';
 
 
