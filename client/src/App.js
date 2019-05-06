@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 // import Home from './components/Home';
 import SigninForm from './components/SigninForm';
-import LandingPage from "./components/LandingPage";
+import LandingPage from "./components/landingPage";
 
 class App extends Component {
   render() {
