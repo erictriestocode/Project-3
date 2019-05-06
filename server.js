@@ -10,7 +10,7 @@ const session = require("express-session");
 const passport = require("./config/passport"); // ***** BEC TODO
 const db = require("./models");
 
-// var Sequelize = require("sequelize"); ***** SANTIAGO TODO
+// const Sequelize = require("sequelize"); ***** SANTIAGO TODO
 // const routes = require("./routes"); ***** ERIC TODO
 
 //MIDDLEWARE--------------------------------------------------

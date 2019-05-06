@@ -1,14 +1,13 @@
-// Requiring our models and passport as we've configured it
+// Requiring our models and passport as we've configured
 var db = require("../models");
 var passport = require("../config/passport");
 //
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     res.json("/members");
   });
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+  // Route for signing up a user; users password is automatically hashed and stored securely
   app.post("/api/signup", function (req, res) {
     console.log(req.body);
     db.User.create({
@@ -36,7 +35,6 @@ module.exports = function (app) {
       res.json({});
     } else {
       // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
         id: req.user.id

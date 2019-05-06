@@ -1,33 +1,28 @@
-import React from 'react';
+// import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
+// import Home from './components/Home';
 import SigninForm from './components/SigninForm';
-import LandingPage from "./components/landingPage";
+import LandingPage from "./components/LandingPage";
 
-
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
+  render() {
+    return (
+      <div>
       <Navbar/>
-      <LandingPage/>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      {/* <SigninForm/> */}
-    </div>
-  );
+      <BrowserRouter>
+        <Switch>
+        <Route exact path="/" component={LandingPage} />
+          <Route path="/SigninForm" component={SigninForm} />
+        </Switch>
+      </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;
+

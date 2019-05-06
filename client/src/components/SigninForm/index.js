@@ -1,25 +1,18 @@
 //set imports
-import React from "react"
+import React, { Component } from 'react';
 
-//html from passport to build our signin component
-function SigninForm(props){
+class SigninForm extends Component {
+render() {
   return (
-    <div className= "form-container">
-      <form action="/login" method="post">
-        <div>
-          <label>Username:</label>
-          <input type="text" name="username"/>
-        </div>
       <div>
-          <label>Password:</label>
-          <input type="password" name="password"/>
+          <form>
+              <label>Email</label><input type="text" name="email" />
+              <label>password</label><input type="text" name="password"/>
+              <button type="submit">Submit</button>
+          </form>
       </div>
-        <div>
-          <input type="submit" value="Log In"/>
-        </div>
-      </form>
-    </div>
-  );
+  )
+}
 }
 
 export default  SigninForm

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Component } from 'react';
 import "./style.css";
 
 
-function LandingPage() {
-    return (
+class LandingPage extends Component {
+    render() {
+      return (
         <div>
             <div className="container">
                 <span><img src={require("../../assets/logo.JPG")} alt="ThisforThat logo" className="responsive img-center" /></span>
@@ -60,11 +61,8 @@ function LandingPage() {
         </div>
         
         </div>
-     
     )
-
-
 }
-
+}
 
 export default LandingPage

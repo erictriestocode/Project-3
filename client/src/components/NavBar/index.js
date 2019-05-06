@@ -1,15 +1,16 @@
 //set imports
-import React from "react";
+import React, { Component } from 'react';
 import "./style.css";
 
-function Navbar(props){
-  return (
+class Navbar extends Component {
+  render() {
+    return (
     <div>
     <nav>
-    <div class="nav-wrapper blue darken-4">
-      <a href="#!" class="brand-logo center">ThisforThat</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+    <div className="nav-wrapper blue darken-4">
+      <a href="#!" className="brand-logo center">ThisforThat</a>
+      <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+      <ul className="right hide-on-med-and-down">
         <li><a href="#">My Profile</a></li>
         <li><a href="#">Search People</a></li>
         <li><a href="#">Transactions</a></li>
@@ -18,32 +19,34 @@ function Navbar(props){
   </nav>
   </div>
   );
-  // <ul class="sidenav" id="mobile-demo">
+    }
+  }
+
+
+  // <ul className="sidenav" id="mobile-demo">
   //   <li>
-  //     <div class="user-view">
-  //       <div class="background blue lighten-2"></div>
+  //     <div className="user-view">
+  //       <div className="background blue lighten-2"></div>
   //       <a href="#user">
-  //         <img class="circle" src="avatar.png" />
+  //         <img className="circle" src="avatar.png" />
   //       </a>
   //       <a href="#name">
-  //         <span class="white-text name">User Name</span>
+  //         <span className="white-text name">User Name</span>
   //       </a>
   //     </div>
   //   </li>
   //   <li>
-  //     <a href="#"><i class="material-icons">person</i>My Profile</a>
+  //     <a href="#"><i className="material-icons">person</i>My Profile</a>
   //   </li>
   //   <li>
-  //     <a href="#"><i class="material-icons">search</i>Search People</a>
+  //     <a href="#"><i className="material-icons">search</i>Search People</a>
   //   </li>
   //   <li>
-  //     <a href="#"><i class="material-icons">timer</i>Transactions</a>
+  //     <a href="#"><i className="material-icons">timer</i>Transactions</a>
   //   </li>
   // </ul>
   // <br>
     
-}
  
 
 export default Navbar
-
