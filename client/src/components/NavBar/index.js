@@ -1,5 +1,6 @@
 //set imports
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import "./style.css";
 
 class Navbar extends Component {
@@ -11,9 +12,15 @@ class Navbar extends Component {
       <a href="#!" className="brand-logo center">ThisforThat</a>
       <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
       <ul className="right hide-on-med-and-down">
-        <li><a href="#">My Profile</a></li>
+        <Link to='/home'>
+          <li><a href="#">My Profile</a></li>
+        </Link>
+        <Link to='/search'>
         <li><a href="#">Search People</a></li>
+        </Link>
+        <Link to='/transactions'>
         <li><a href="#">Transactions</a></li>
+        </Link>
       </ul>
     </div>
   </nav>
