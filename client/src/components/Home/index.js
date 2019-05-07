@@ -1,8 +1,9 @@
-import React from "react";
-import "style-home.css";
+import React, { Component } from 'react';
+import "./style-home.css";
 
 
-function homepage() {
+class Home extends Component {
+    render() {
     return (
         <div>
                 <div class="container">
@@ -73,6 +74,6 @@ function homepage() {
         // </script>
     )
 }
+}
 
-
-export default homepage
+export default Home
