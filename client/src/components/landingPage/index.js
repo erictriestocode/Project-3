@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import "./style.css";
 
 
@@ -14,7 +15,9 @@ class LandingPage extends Component {
             time. Users can trade their time as a commodity.</h5>
                 </div>
                 <div className="row center">
+                    <Link to='/home'>
                     <a href="#" id="button" className="btn-large waves-effect waves-light orange">Let's Get Started</a>
+                    </Link>
                 </div>
                 <br /><br />
             </div>
