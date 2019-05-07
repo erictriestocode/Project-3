@@ -5,6 +5,9 @@ import "./style.css";
 
 class Navbar extends Component {
   render() {
+    const style = {
+      color: 'white'
+    };
     return (
     <div>
     <nav>
@@ -12,14 +15,14 @@ class Navbar extends Component {
       <a href="#!" className="brand-logo center">ThisforThat</a>
       <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
       <ul className="right hide-on-med-and-down">
-        <Link to='/home'>
-          <li><a href="#">My Profile</a></li>
+        <Link style={style} to='/home'>
+          <li>My Profile</li>
         </Link>
-        <Link to='/search'>
-        <li><a href="#">Search People</a></li>
+        <Link style={style} to='/search'>
+        <li>Search People</li>
         </Link>
-        <Link to='/transactions'>
-        <li><a href="#">Transactions</a></li>
+        <Link style={style} to='/transactions'>
+        <li>Transactions</li>
         </Link>
       </ul>
     </div>
