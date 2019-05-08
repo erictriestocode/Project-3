@@ -3,8 +3,6 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const http = require("http"); // For initial testing!
-
-
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const passport = require("./config/passport"); // ***** BEC TODO
@@ -63,6 +61,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Start the API server
 db.sequelize.sync({ force: true }).then(function () {
+  // console.log("DB connected!");
   app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
