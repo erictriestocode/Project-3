@@ -21,12 +21,12 @@ const db = require("./models");
 // app.use(express.json());
 
 // Define middleware here
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static("public"));
 
+// Static directory
+app.use(express.static("client/public"));
+app.use('/api', require('/routes'))
 
 //passport middleware ***** BEC TODO
 app.use(session({
@@ -62,8 +62,9 @@ if (process.env.NODE_ENV === "production") {
 // app.use(routes);
 
 // Start the API server
-db.sequelize.sync().then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
 });
+
