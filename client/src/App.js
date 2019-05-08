@@ -8,6 +8,8 @@ import Navbar from "./components/NavBar";
 import Home from './components/Home';
 import SigninForm from './components/SigninForm';
 import LandingPage from "./components/landingPage";
+import Help from './components/Help';
+import Registration from './components/Registration';
 
 class App extends Component {
   render() {
@@ -20,6 +22,8 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route path="/signinform" component={SigninForm} />
             <Route path="/home" component={Home} />
+            <Route path="/help" component={Help} />
+            <Route path="/registration" component={Registration} />
           </Switch>
         </BrowserRouter>
       </div>
