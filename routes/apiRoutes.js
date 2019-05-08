@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured
 var db = require("../models");
 var passport = require("../config/passport");
-//
+// **** PASSPORT ROUTES *****
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
@@ -42,3 +42,6 @@ module.exports = function (app) {
     }
   });
 };
+// ***** END PASSPORT ROUTES *****
+
+// ***** START SQL ROUTES *****
