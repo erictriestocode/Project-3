@@ -10,6 +10,8 @@ import SigninForm from './components/SigninForm';
 import LandingPage from "./components/landingPage";
 import Help from './components/Help';
 import Registration from './components/Registration';
+import Transaction from './components/Transaction';
+
 
 class App extends Component {
   render() {
@@ -24,6 +26,7 @@ class App extends Component {
             <Route path="/home" component={Home} />
             <Route path="/help" component={Help} />
             <Route path="/registration" component={Registration} />
+            <Route path="/transaction" component={Transaction} />
           </Switch>
         </BrowserRouter>
       </div>
