@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import "./style.css";
+// import "./style.css";
 
 class Transaction extends Component {
     render() {
